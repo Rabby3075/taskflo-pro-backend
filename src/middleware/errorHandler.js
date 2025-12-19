@@ -11,7 +11,7 @@ export const errorHandler = (err, req, res, next) => {
     //Mongoose duplicate key error
     if (err.code && err.code === 11000) {
         const field = Object.keys(err.keyValue);
-        return res.status(400).json({ message: `Duplicate field value entered for ${field}` });
+        return res.status(409).json({ message: `Duplicate field value entered for ${field}` });
     }
 
     //JWT error

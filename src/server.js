@@ -4,6 +4,7 @@ import express from "express";
 import connectDb from "./config/database.js";
 import { errorHandler } from "./middleware/errorHandler.js";
 import authrouter from "./routes/authRoutes.js";
+import taskrouter from "./routes/taskRoutes.js";
 //load env variables
 dotenv.config();
 //connect to database
@@ -34,6 +35,8 @@ app.use(express.json()); //for parsing application/json
 app.use(express.urlencoded({ extended: true })); //for parsing application/x-www-form-urlencoded
 //routes
 app.use("/api", authrouter);
+app.use("/api/tasks", taskrouter);
+
 //health check route
 app.get("/api/health", (req, res) => {
   res.status(200).json({ message: "API is running" });
