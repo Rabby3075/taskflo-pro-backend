@@ -10,7 +10,19 @@ cd taskflow-pro-backend
 ```bash
 npm install
 ```
-### Step 3: Run the server
+### Step 3: Run Docker
+Make sure Docker desktop is running and then execute:
+```bash
+docker compose up -d
+```
+### Step 4: Run the server
 ```bash
 npm start
+```
+The server will start at 
+```arduino
+http://localhost:5000
+```
+Health Checkpoint:
+```bash
 ```
