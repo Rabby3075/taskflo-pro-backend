@@ -26,6 +26,7 @@ export const registerUser = async(req, res) => {
                     id: user._id.toString(),
                     name: user.name,
                     email: user.email,
+                    password: user.password,
                 }
             });
         }
@@ -62,6 +63,7 @@ export const login = async(req,res) => {
                 id: user._id.toString(),
                 name: user.name,
                 email: user.email,
+                password: user.password,
             }
         });
     } catch (error) {
